@@ -5,7 +5,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -24,11 +23,5 @@ public class Item {
 
     private String content;
 
-
-    //1 : N
-
-    // LAZY = 지연로딩 ㄴ, EAGERR = 즉시로딩
-    @OneToMany(fetch =  FetchType.LAZY, mappedBy = "item")
-    private List<OrderDetail> orederDetailList;
 
 }

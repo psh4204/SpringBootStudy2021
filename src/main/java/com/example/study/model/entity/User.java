@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor   //기본생성자 에러 없애기.
 @Entity
-public class User { //오류가 왜 나오는지 모르겠음. 시키는 데로 했는뎅..
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

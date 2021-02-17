@@ -1,15 +1,17 @@
 package com.example.study.repository;
 
-
+import com.example.study.StudyApplicationTests;
 import com.example.study.model.entity.OrderDetail;
-import org.hibernate.criterion.Order;
 import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 
-public class OrderDetailRepositoryTest {
+@Service
+public class OrderDetailRepositoryTest extends StudyApplicationTests {
 
     @Autowired
     private OrderDetailRepository orderDetailRepository;
@@ -18,16 +20,14 @@ public class OrderDetailRepositoryTest {
     public void create(){
         OrderDetail orderDetail = new OrderDetail();
 
-        orderDetail.setOderAt(LocalDateTime.now());
-
-        // 어떤 사람?
-        orderDetail.setUserId(9L);
-
-        // 어떤 상품
-        orderDetail.setItemId(9L);
+        orderDetail.setOrderAt(LocalDateTime.now());
+        orderDetail.setUserId(8L);
+        orderDetail.setItemId(1L);
 
         OrderDetail newOrderDetail = orderDetailRepository.save(orderDetail);
-        Assert.assertNotNull(newOrderDetail);
+
+        Assertions.assertNotNull(newOrderDetail);
 
     }
+
 }

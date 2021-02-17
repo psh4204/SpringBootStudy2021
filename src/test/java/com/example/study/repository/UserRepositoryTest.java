@@ -78,9 +78,9 @@ public class UserRepositoryTest extends StudyApplicationTests {
     }
 
     @Test
-    //@Transactional // 기존과 마찬가지로 아래의 메소드는 실행이 되대, 실제로 데이터가 삭제되고 그런건 없게 하는것.롤백해줌.
+    @Transactional // 기존과 마찬가지로 아래의 메소드는 실행이 되대, 실제로 데이터가 삭제되고 그런건 없게 하는것.롤백해줌.
     public void delete(){
-        Optional<User> user = userRepository.findById(11L);
+        Optional<User> user = userRepository.findById(12L);
 
         Assert.assertTrue(user.isPresent());
         // 삭제할려면 ()에 친구가 무조건 True여야한다.(Null값아니죠?= isParesent)
